@@ -1,25 +1,29 @@
-# Práctica 4. Introducción a TypeScript. Unit testing con Jest.
-### Factor de ponderación: 5
+# Práctica 5. Programación Orientada a Objetos en TypeScript
+### Factor de ponderación: 6
 
 ### Objetivos
 Los objetivos de esta práctica son:
-* Configurar el entorno de trabajo en la máquina virtual Linux de la asignatura para ejecutar programas en TypeScript.
-* Ser capaz de desarrollar programas simples en TypeScript en el entorno Linux de la VM de la asignatura usando
-  `ts-node`
-* Ser capaz de desarrollar y ejecutar test unitarios utilizando
-  [Jest](https://jestjs.io/)
-* Ser capaz de generar documentación para sus programas TypeScript utilizando
-  [TypeDoc](https://typedoc.org/)
-  y de visualizar dicha documentación en un servidor web
+* Poner en práctica metodologías y conceptos de Programación Orientada a Objetos en Script.
+* Poner en práctica Principios y Buenas prácticas de programación Orientada a Objetos.
 
 ### Rúbrica de evaluacion del ejercicio
 Se señalan a continuación los aspectos más relevantes (la lista no es exhaustiva)
 que se tendrán en cuenta a la hora de evaluar esta práctica:
 * Se valorará la realización de las diferentes tareas que se proponen
+* El comportamiento del programa debe ajustarse a lo solicitado en este enunciado.
+* Capacidad de la programadora de introducir cambios en el programa desarrollado.
+* Conocer y poner en prácticas los principios y buenas prácticas de programación orientada a objetos.
+* Saber corregir bugs en sus programas utilizando el depurador de Visual Studio Code
+* Deben usarse estructuras de datos adecuadas para representar los diferentes elementos que intervienen en el problema
+* Ser capaz de desarrollar programas simples en TypeScript en el entorno Linux de la VM de la asignatura usando
+  `ts-node`
+* Ser capaz de generar documentación para sus programas TypeScript utilizando
+  [TypeDoc](https://typedoc.org/)
+  y de visualizar dicha documentación en un servidor web
 * El alumnado debe ser capaz de resolver problemas tanto en JS como en TS en la plataforma Exercism subiendo sus soluciones a la misma.
 * Ser capaz de desarrollar tests unitarios para sus programas utilizando
   [Jest](https://jestjs.io/)
-* Acreditar que conoce la herramienta 
+* Acreditar su capacidad para configurar y utilizar 
   [ESLint](https://eslint.org/)
 y que es capaz de trabajar con la misma en Visual Studio Code.
 * Acreditar que conoce las etiquetas de 
@@ -33,44 +37,43 @@ y que es capaz de generar documentación para sus programas utilizando la herram
 * Todas las prácticas realizadas hasta la fecha, incluída la que se presenta para su evaluación, se encuentran alojadas en repositorios privados de GitHub.
 * Acreditar que es capaz de editar ficheros de forma remota en su VM usando Visual Studio Code
 
+### Indicaciones de caracter general
+En esta práctica y las siguientes se promoverá el uso del paradigma orientado a objetos.
+Los programas han de organizarse en torno a clases que se han de implementar usando la sintaxis para
+clases ES6 de JavaScript y poniendo en práctica los principios de abstracción y encapsulamiento característicos 
+de la Programación Orientada a Objetos.
+En los ejercicios han de ponerse en práctica los principios y buenas prácticas que han sido expuestos en las clases de la asignatura.
+
+Vigile siempre el tipo de visibilidad que elige para los atributos (properties) de sus clases
+y tenga en cuenta tanto las reglas de 
+[estilo](https://google.github.io/styleguide/jsguide.html#features-classes)
+como las 
+[etiquetas JSDoc](https://stackoverflow.com/questions/41715994/how-to-document-ecma6-classes-with-jsdoc)
+relacionadas con el constructo `class`.
+
+Previo a la implementación de cada clase, diseñe y desarrolle un conjunto de tests para probar el correcto
+funcionamiento de todos los métodos públicos.
+
+Encapsule las clases en módulos que exporten la correspondiete clase hacia otros programas clientes que pudieran utilizarla.
+
+Configure para la práctica una página web que sirva de índice para mostrar la documentación generada por
+JSDoc para todos los ejercicios de la práctica.
+
+Configure un fichero `package.json` en el directorio raíz de su repositorio de modo que ejecutando 
+`npm install` queden instaladas todas las dependencias de su proyecto.
+
+
+
+
+
+
+
+
+
+
+
+
 ## Introducción a TypeScript
-TypeScript (TS) es un superconjunto de JavaScript (JS). 
-No se trata de un lenguaje de programación completamente nuevo, sino que ha sido diseñado 
-partiendo de JS, tomándolo como base y añadiéndole nuevas características y funcionalidades, 
-lo que permite desarrollar código de un modo más sencillo, limpio y libre de errores.
-
-TypeScript no es solo un lenguaje de programación, sino un traductor que permite generar código fuente 
-en JavaScript a partir de código fuente escrito en TS. 
-Como su nombre indica, TS permite utilizar tipos de datos estáticos. 
-lo cual es muy relevante, puesto que los tipos de datos estáticos permiten detectar errores en el código 
-en fases más tempranas del desarrollo del software y no, por ejemplo, en tiempo de ejecución, cuando el 
-software ya se encuentra en producción.
-
-Utilice como punto de partida para estudiar TypeScript (TS) el material del trabajo
-[Introduction to TypeScript](https://github.com/alu0101329888/Introduction-to-TypeScript)
-expuesto en las clases de la asignatura.
-A continuación estudie las secciones 1 (*Getting Started*), 2 (*Basic Types*) y 4 (*Functions*) del
-[TypeScript Tutorial](https://www.typescripttutorial.net/)
-No deje de revisar la sección 3 (*Control Flow Statements*) del tutorial, aunque la sintaxis y semántica de las 
-sentencias de control en TS son las mismas que ya conoce de JS.
-En el aula virtual de PAI encontrará también las transparencias
-[TypeScript Functions](https://campusingenieriaytecnologia2223.ull.es/mod/url/view.php?id=27312)
-que debe estudiar.
-En el material anterior no es necesario que estudie, por ahora, nada relativo a programación orientda a objetos en
-la implementación que TS realiza de este paradigma.
-
-El siguiente paso en esta práctica será que desarrolle Ud. en TypeScript todos los programas que haya realizado
-hasta ahora en JavaScript.
-Para la ejecución de esos programas practique tanto a utilizar el compilador de TS (`tsc`)  como
-`ts-node`, el motor de ejecución de TS para Node.js.
-El el directorio principal de esta práctica hallará sendos ficheros
-`tsconfig.json` y `package.json` para trabajar con TypeScript.
-Examine el contenido de esos ficheros y cree un subdirectorio dentro de `src` para cada uno de los programas
-que desarrolle en esta práctica.
-Consulte la
-[TSConfig Reference](https://www.typescriptlang.org/tsconfig)
-para conocer el significado de algunas de las opciones disponibles en el fichero `tsconfig.json`
-Modifique estos ficheros libremente, si le resulta conveniente.
 
 ### Ejercicios simples de TypeScript en Exercism
 Únase al
