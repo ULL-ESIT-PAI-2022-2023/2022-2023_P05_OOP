@@ -3,8 +3,9 @@
 
 ### Objetivos
 Los objetivos de esta práctica son:
-* Poner en práctica metodologías y conceptos de Programación Orientada a Objetos en Script.
+* Poner en práctica metodologías y conceptos de Programación Orientada a Objetos en TypeScript.
 * Poner en práctica Principios y Buenas prácticas de programación Orientada a Objetos.
+* Practicar la depuración de programas TypeScript usando Visual Studio Code.
 
 ### Rúbrica de evaluacion del ejercicio
 Se señalan a continuación los aspectos más relevantes (la lista no es exhaustiva)
@@ -61,8 +62,8 @@ Encapsule las clases en módulos que exporten la correspondiete clase hacia otro
 Configure para la práctica una página web que sirva de índice para mostrar la documentación generada por
 JSDoc para uno de los ejercicios de la práctica.
 
-Configure un fichero `package.json` en el directorio raíz de su repositorio de modo que ejecutando 
-`npm install` queden instaladas todas las dependencias de su proyecto.
+Configure un fichero `package.json` en el directorio raíz de su de cada uno de sus ejercicios, de modo que ejecutando 
+`npm install` queden instaladas todas las dependencias del proyecto.
 
 ### 1.- La clase *Racional*
 Un 
