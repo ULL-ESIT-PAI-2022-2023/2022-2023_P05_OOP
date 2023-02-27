@@ -39,126 +39,143 @@ y que es capaz de generar documentación para sus programas utilizando la herram
 
 ### Indicaciones de caracter general
 En esta práctica y las siguientes se promoverá el uso del paradigma orientado a objetos.
-Los programas han de organizarse en torno a clases que se han de implementar usando la sintaxis para
-clases ES6 de JavaScript y poniendo en práctica los principios de abstracción y encapsulamiento característicos 
-de la Programación Orientada a Objetos.
-En los ejercicios han de ponerse en práctica los principios y buenas prácticas que han sido expuestos en las clases de la asignatura.
+Los programas han de organizarse en torno a clases que se han de implementar en TypeScript,
+poniendo en práctica los principios de abstracción y encapsulamiento característicos 
+de la OOP así como los principios y buenas prácticas que han sido expuestos en las clases de la asignatura.
 
 Vigile siempre el tipo de visibilidad que elige para los atributos (properties) de sus clases
 y tenga en cuenta tanto las reglas de 
-[estilo](https://google.github.io/styleguide/jsguide.html#features-classes)
+[estilo](https://google.github.io/styleguide/tsguide.html)
 como las 
-[etiquetas JSDoc](https://stackoverflow.com/questions/41715994/how-to-document-ecma6-classes-with-jsdoc)
-relacionadas con el constructo `class`.
+[etiquetas Typedoc](https://typedoc.org/guides/overview/)
+relacionadas con la documentación de clases.
+Los
+[ejemplos de TypeDoc](https://typedoc.org/example/)
+pueden servirle de guía.
 
 Previo a la implementación de cada clase, diseñe y desarrolle un conjunto de tests para probar el correcto
-funcionamiento de todos los métodos públicos.
+funcionamiento de todos los métodos que desarrolle.
 
 Encapsule las clases en módulos que exporten la correspondiete clase hacia otros programas clientes que pudieran utilizarla.
 
 Configure para la práctica una página web que sirva de índice para mostrar la documentación generada por
-JSDoc para todos los ejercicios de la práctica.
+JSDoc para uno de los ejercicios de la práctica.
 
 Configure un fichero `package.json` en el directorio raíz de su repositorio de modo que ejecutando 
 `npm install` queden instaladas todas las dependencias de su proyecto.
 
+### 1.- La clase *Racional*
+Un 
+[número racional](https://en.wikipedia.org/wiki/Rational_number)
+tiene un numerador y un denominador de la forma `p/q` donde `p` es el numerador y `q` el denominador.
+Por ejemplo, 1/3, 3/4 y 10/4 son números racionales.
 
+Un número racional no puede tener denominador 0, pero sí puede ser cero el numerador.
+Todo número entero `n` es equivalente al racional `n/1`.
+Los números racionales se utilizan en cálculos precisos que involucran fracciones.
+Por ejemplo, `1/3 = 0.33333 ...`.
+Este número no puede ser representado de forma precisa en formato de punto flotante.
+Para obtener resultados precisos es conveniente usar números racionales.
 
+Desarrollare un módulo que implemente una clase `Racional` para representar y operar con números racionales.
 
+Desarrolle un programa cliente `racionales.ts` que permita operar con números racionales y haga uso
+de la clase `Racional`.
 
+Las siguientes deben tomarse como especificaciones del programa a desarrollar:
+* La clase `Racional` incluirá al menos métodos para:
+    * Escribir un objeto de tipo `Racional`.
+    * Leer (por teclado o desde fichero) un objeto de tipo `Racional`.
+    * Sumar dos objetos de tipo `Racional`.
+    * Restar dos objetos de tipo `Racional`.
+    * Multiplicar dos objetos de tipo `Racional`.
+    * Dividir dos objetos de tipo `Racional`.
+    * Comparar objetos de tipo `Racional`.
+* El programa cliente ha de permitir probar todas las posibles operaciones desarrolladas para números
+racionales.
 
+Desarrolle test para probar todas las funcionalidades que implemente en su clase `Racional`.
 
-
-
-
-
-
-## Introducción a TypeScript
-
-### Ejercicios simples de TypeScript en Exercism
-Únase al
-[TypeScript track in Exercism](https://exercism.org/tracks/typescript)
-y realice en él todos los ejercicios que sea capaz, particularmente aquellos que ya haya realizado en JavaScript.
-Del mismo modo que hizo en JS, comience con los problemas más sencillos como **Hello World** o **Two Fer** y progrese
-en este itinerario tanto como le sea posible.
-De la 
-[Ejercicios de TypeScript en Exercism](https://exercism.org/tracks/typescript/exercises)
-una vez que haya realizdo algunos de los ejercicios catalogados como fáciles (*Easy*) preste atención a
-algunos de los de dificultad media o alta.
-Tenga en cuenta que por ahora no se le requerirá trabajar con ejercicios que conlleven programación orientada a objetos.
-
-Todos los ejercicios que realice en TypeScript han de seguir los criterios de formato, estilo y documentación que
-se han venido estudiando hasta ahora.
-Para el caso de TS recuerde que existe una guía de estilo específica,
-[Google TypeScript Style Guide](https://google.github.io/styleguide/tsguide.html)
-que para algunos aspectos específicos complementa a la guía de estilo para JS.
-
-En cuanto a documentación de código se seguirán utilizando los mismos criterios y etiquetas de JSDoc que ya
-se han estudiado.
-
-Recuerde que Exercism también utiliza Jest como plataforma de testing para los ejercicios de TypeScript.
-Para cada problema, preste atención a los tests que su código ha de superar y la implementación de los mismos.
-
-### Unit Testing con Jest
-Realice en TypeScript cada uno de los siguientes problemas de
-[Jutge](https://jutge.org/)
-haciendo que la entrada que requieran los programas que solucionan el problema se tome por línea de comandos.
-Para capturar los parámetros de línea de comando ejecutando el programa en `ts-node` pueden seguir usando
-`process.argv`
-
-Haga también que los programas incluyan documentación en formato JSDoc (TypeDoc). 
-Se propone desarrollar una página *índice* desde la que se enlacen las páginas de documentación de cada uno de
-estos programas.
-
-Desarrolle tests unitarios en 
-[Jest](https://jestjs.io/)
-para probar la corrección de cada una de las soluciones.
-Aparte de los tests públicos de Jutge, incluya al menos un test test adicional para comprobar situaciones que
-considere relevantes.
-Si su solución se basa en varias funciones, desarrolle tests para cada una de ellas.
-
-1. [P34279](https://jutge.org/problems/P34279) Add one Second.
-2. [P51126](https://jutge.org/problems/P51126) Intervals (I)
-3. [P33839](https://jutge.org/problems/P33839) Sum of Digits. Para este problema, simplifique la salida de
-modo que ésta se limite a un único número (la suma de los dígitos).
-4. [P80660](https://jutge.org/problems/P80660) The sequence of Collatz
-5. [P91173](https://jutge.org/problems/P91173_en) Collatz pseudo-sequences (1)
-6. [P11916](https://jutge.org/problems/P11916_en) Approximation of e. Simplifique la salida del programa para
-que se limite a un solo número en punto flotante (el valor de e).
-7. [P76024](https://jutge.org/problems/P76024_en) Sum of fractions
-
-## TypeDoc
-[TypeDoc](https://typedoc.org/)
-es una generador de documentación para proyectos TypeScript, similar a JsDoc o javadoc.
-Funciona del mismo modo que JSDoc: la herramienta extrae los comentarios de documentación directamente del código fuente
-genera un sitio web de documentación HTML para el proyecto.
-
-Para comenzar a usar TypeDoc simplemente ejecute los siguientes comandos:
-```
-# Install
-npm install --save-dev typedoc
-
-# Execute typedoc on your project
-npx typedoc src/index.ts
-```
-Para un conocimiento más exhaustivo de la herramienta revise el vídeo
-[Configuración y y uso de TypeDoc](https://drive.google.com/file/d/19LLLCuWg7u0TjjKz9q8ZhOXgbrKtPUme/view)
-del profesor 
-[Eduardo Segredo](https://portalciencia.ull.es/investigadores/80784/detalle)
-y/o el
-[TypeDoc Tutorial](https://cancerberosgx.github.io/javascript-documentation-examples/examples/typedoc-tutorial-basic/docs/docco/src/index.html#:~:text=TypeDoc%20is%20an%20API%20documentation,HTML%20documentation%20website%20for%20you.)
-
-Para los problemas 
-
-4. [P80660](https://jutge.org/problems/P80660) The sequence of Collatz
-5. [P91173](https://jutge.org/problems/P91173_en) Collatz pseudo-sequences (1)
-7. [P76024](https://jutge.org/problems/P76024_en) Sum of fractions
-
-del apartado anterior, genere con TypeDoc la documentación en formato HTML para cada uno de estos programas y haga que dicha documentación 
+Para este ejercicio, genere con TypeDoc la documentación del programa en formato HTML y haga que dicha documentación 
 sea accesible a través de un servidor web en su máquina virtual de la asignatura.
 
+### 2.- La clase *MySet*
+En este ejercicio se propone desarrollar un módulo que implemente una clase `MySet` 
+para representar 
+[conjuntos](https://en.wikipedia.org/wiki/Set_(mathematics)) 
+de números naturales.
+
+Obviamente, si en alguna ocasión se precisa utilizar conjuntos, lo que ha de hacerse es utilizar la clase 
+[Set](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set)
+de JavaScript.
+No obstante en este ejercicio práctico la implementación de la clase `MySet` no ha de usar en modo alguno objetos 
+[Set](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set)
+de JavaScript.
+
+La clase ha de contener al menos métodos (y/o atributos) que implementen las siguientes operaciones con conjuntos:
+* `toString` Devuelve una cadena que representa el conjunto. Los conjuntos se imprimirán en pantalla con sus
+  elementos incluídos entre llaves, de modo que el conjunto vacío se representa por `{}`.
+* `size` Devuelve el cardinal del conjunto
+* `union` Unión de conjuntos
+* `intersection` Intersección de conjuntos
+* `difference` Complemento relativo
+* `contains` Determina si un elemento pertenece al conjunto
+* `empty` Determina sin un conjunto es vacío
+* `subset` Determina si un conjunto es subconjunto de otro 
+* `disjorint` Indica si dos conjuntos son disjuntos
+* `eql` Indica si dos conjuntos son iguales 
+* `add` Añade un elemento a un conjunto
+
+Para la definición de estas operaciones consulte 
+[Wikipedia](https://en.wikipedia.org/wiki/Set_(mathematics)) 
+así como los métodos y ejemplos de la clase
+[Set](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set) 
+de JavaScript.
+
+Incluya discrecionalmente cualesquiera otras operaciones que considere adecuadas como métodos en la clase
+`MySet`.
+
+Desarrolle un programa cliente `sets.ts` que permita operar con conjuntos y haga uso de la clase `MySet` que diseñe.
+El programa cliente realizará operaciones similares a las que figuran en la página MDN correspondiente a la
+clase
+[Set](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set) 
+de JavaScript, por ejemplo:
+```javascript
+const mySet1 = new MySet()
+
+mySet1.add(1)           // Set {1}
+mySet1.add(5)           // Set {1, 5}
+mySet1.add(5)           // Set {1, 5}
+mySet1.has(Math.sqrt(25))  // true
+
+const mySet2 = new MySet([1, 2, 3, 4])
+mySet2.size                    // 4
+```
+
+Observe que el constructor de la clase toma como parámetro un array en el que figuran los elementos con los
+que se inicializa el conjunto.
+
+Por simplicidad asumiremos que los números que intervienen en los conjutos son todos mayores o iguales que 1.
+
+Para representar internamente los conjuntos se pueden utilizar diversas ideas y se propone aquí una que podría
+usarse, si lo consideran conveniente, y que se expone a continuación:
+
+Para representar un conjunto de números (enteros positivos) se utilizarán los bits de un número. 
+Si el bit i-ésimo está a 1 ello indicará que el número *i* pertenece al conjunto. 
+Si ese bit está a 0, ello indica que el número *i* no pertenece al conjunto. 
+De este modo se puede representar conjuntos con tantos números naturales como bits tiene la representación
+binaria del número.
+
+### Ejercicios de Exercism
+Resuelva los siguientes problemas ejecutando los tests correspondientes a cada uno de ellos hasta conseguir
+que todos pasen correctamente. 
+Una vez que lo logre, suba su solución a Exercism.
+
+3.- [Robot Name](https://exercism.org/tracks/typescript/exercises/robot-name)
+
+4.- [Robot Simulator](https://exercism.org/tracks/javascript/exercises/robot-simulator)
+
 ## Referencias
-* [Exercism](https://exercism.io/)
 * [Introduction to TypeScript](https://github.com/alu0101329888/Introduction-to-TypeScript)
 * [TypeScript Tutorial](https://www.typescripttutorial.net/)
 * [TSConfig Reference](https://www.typescriptlang.org/tsconfig)
