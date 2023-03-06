@@ -29,9 +29,7 @@ que se tendrán en cuenta a la hora de evaluar esta práctica:
 y que es capaz de trabajar con la misma en Visual Studio Code.
 * Acreditar que conoce las etiquetas de 
   [JSDoc](https://jsdoc.app/)
-* Acreditar que es capaz de generar documentación para sus programas utilizando
-  [TypeDoc](https://typedoc.org/)
-y que es capaz de generar documentación para sus programas utilizando la herramienta.
+  y que es capaz de generar documentación para sus programas utilizando la herramienta.
 * El alumnado ha de acreditar que es capaz de desarrollar programas de la plataforma Jutge
 * Se comprobará que el código que el alumnado escribe se adhiere a las reglas de las Guías de Estilo de Google
   para Javascript y/o TypeScript
