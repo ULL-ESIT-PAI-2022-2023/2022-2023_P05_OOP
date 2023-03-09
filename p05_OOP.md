@@ -84,7 +84,7 @@ de la clase `Racional`.
 Las siguientes deben tomarse como especificaciones del programa a desarrollar:
 * La clase `Racional` incluirá al menos métodos para:
     * Escribir un objeto de tipo `Racional`.
-    * Leer (por teclado o desde fichero) un objeto de tipo `Racional`.
+    * Leer por teclado un objeto de tipo `Racional`.
     * Sumar dos objetos de tipo `Racional`.
     * Restar dos objetos de tipo `Racional`.
     * Multiplicar dos objetos de tipo `Racional`.
@@ -118,12 +118,12 @@ La clase ha de contener al menos métodos (y/o atributos) que implementen las si
 * `union` Unión de conjuntos
 * `intersection` Intersección de conjuntos
 * `difference` Complemento relativo
-* `contains` Determina si un elemento pertenece al conjunto
-* `empty` Determina sin un conjunto es vacío
-* `subset` Determina si un conjunto es subconjunto de otro 
-* `disjorint` Indica si dos conjuntos son disjuntos
-* `eql` Indica si dos conjuntos son iguales 
-* `add` Añade un elemento a un conjunto
+* `belongsTo` Determina si un elemento pertenece al conjunto
+* `isEmpty` Determina sin un conjunto es vacío
+* `isSubset` Determina si un conjunto es subconjunto de otro 
+* `areDisjoint` Indica si dos conjuntos son disjuntos
+* `areEqual` Indica si dos conjuntos son iguales 
+* `insert` Añade un elemento a un conjunto
 
 Para la definición de estas operaciones consulte 
 [Wikipedia](https://en.wikipedia.org/wiki/Set_(mathematics)) 
